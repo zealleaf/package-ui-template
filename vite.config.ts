@@ -22,7 +22,13 @@ module.exports = defineConfig(({ mode }) => {
         fileName: (format) => `index.${format}.js`
       },
       rollupOptions: {
-        external: ['react', 'react-dom']
+        external: ['react', 'react-dom'],
+        output: {
+          globals: {
+            react: 'React',
+            'react-dom': 'ReactDOM'
+          }
+        }
       },
       minify: 'terser',
       outDir: path.resolve(__dirname, 'lib')

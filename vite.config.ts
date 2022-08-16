@@ -7,6 +7,7 @@ import { visualizer } from 'rollup-plugin-visualizer'
 
 module.exports = defineConfig(({ mode }) => {
   const ENV = { ...process.env, ...loadEnv(mode, process.cwd(), '') }
+  
   return {
     resolve: {
       alias: {

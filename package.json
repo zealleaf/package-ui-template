@@ -32,9 +32,9 @@
   },
   "homepage": "https://github.com/zealleaf/template-package-ui#readme",
   "scripts": {
-    "build:dev": "cross-env DIY_ENV=dev tsc && vite build",
-    "build:prod": "cross-env DIY_ENV=prod tsc && vite build",
-    "build:analysis": "cross-env DIY_ENV=analysis tsc && vite build",
+    "build:dev": "tsc && cross-env DIY_ENV=dev vite build",
+    "build:prod": "tsc && cross-env DIY_ENV=prod vite build",
+    "build:analysis": "tsc && cross-env DIY_ENV=analysis vite build",
     "prepublishOnly": "pnpm run build:prod",
     "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx --quiet ./",
     "push": "esno scripts/push-to-github.ts"

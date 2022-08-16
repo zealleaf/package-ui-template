@@ -1,7 +1,7 @@
 {
-  "name": "package-ui-template",
-  "version": "0.0.0",
-  "description": "package-ui-template",
+  "name": "template-package-ui",
+  "version": "0.1.0",
+  "description": "template-package-ui",
   "author": "zealleaf",
   "license": "MIT",
   "main": "lib/index.umd.js",
@@ -24,17 +24,18 @@
     "component"
   ],
   "bugs": {
-    "url": "https://github.com/zealleaf/package-ui-template/issues"
+    "url": "https://github.com/zealleaf/template-package-ui/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zealleaf/package-ui-template.git"
+    "url": "git+https://github.com/zealleaf/template-package-ui.git"
   },
-  "homepage": "https://github.com/zealleaf/package-ui-template#readme",
+  "homepage": "https://github.com/zealleaf/template-package-ui#readme",
   "scripts": {
-    "build:dev": "tsc && vite build  --mode development",
-    "build:prod": "tsc && vite build --mode production",
-    "prep": "pnpm run build:prod",
+    "build:dev": "cross-env DIY_ENV=dev tsc && vite build",
+    "build:prod": "cross-env DIY_ENV=prod tsc && vite build",
+    "build:analysis": "cross-env DIY_ENV=analysis tsc && vite build",
+    "prepublishOnly": "pnpm run build:prod",
     "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx --quiet ./",
     "push": "esno scripts/push-to-github.ts"
   },
@@ -51,14 +52,10 @@
     ]
   },
   "peerDependencies": {
-    "@emotion/react": "^10|^11",
     "react": "^17|^18",
     "react-dom": "^17|^18"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@emotion/babel-plugin": "^11.9.2",
-    "@emotion/react": "^11.9.0",
     "@types/node": "^17.0.40",
     "@types/react": "^18.0.11",
     "@types/react-dom": "^18.0.5",
@@ -79,6 +76,7 @@
     "prettier": "^2.6.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "rollup": "^2.78.0",
     "rollup-plugin-visualizer": "^5.7.1",
     "shelljs": "^0.8.5",
     "simple-git-hooks": "^2.8.0",

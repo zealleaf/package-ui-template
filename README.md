@@ -1,2 +1,2 @@
 # template-package-ui
-package-ui-template
+template-package-ui

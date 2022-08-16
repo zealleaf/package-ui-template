@@ -18,7 +18,7 @@ module.exports = defineConfig(({ mode }) => {
       target: 'es2015',
       lib: {
         entry: path.resolve(__dirname, 'src/index.ts'),
-        name: '@leafvein/catalogue',
+        name: '@leafvein/uidemo',
         fileName: (format) => `index.${format}.js`
       },
       rollupOptions: {
